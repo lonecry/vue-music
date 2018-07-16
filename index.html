@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang = "zh-CN">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+    <title>test</title>
+    <style>
+        body {
+
+            background: url("src/assets/images/bg.png") repeat;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .listul {
+            width: 800px;
+            height: 200px;
+            border: 1px solid #f7fcff;
+            margin: 0 auto;
+            list-style: none;
+            margin-top: 100px;
+        }
+
+        .leftimg {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            float: left;
+            background: #f6f9fb;
+        }
+
+        .backgroundUrl {
+            margin: 20px 0 0 20px;
+            width: 160px;
+            height: 160px;
+            border-radius: 5px;
+            transition: box-shadow 0.1s;
+        }
+
+        .backgroundUrl:hover {
+
+            box-shadow: 0px 0px 9px 3px #a9a8a8;
+            cursor: pointer;
+        }
+
+        .right {
+            width: 600px;
+            height: 200px;
+            float: left;
+            background: #f6f9fb;
+            /*background: rgba(194, 194, 194, 1);*/
+            position: relative;
+        }
+
+        .name {
+            position: absolute;
+            left: 10px;
+            top: 30px;
+            width: 450px;
+            height: 30px;
+            line-height: 30px;
+            /*background: red;*/
+            font-weight: bold;
+        }
+
+        .listener {
+            position: absolute;
+            right: 0px;
+            top: 30px;
+            width: 150px;
+            height: 30px;
+            /*background: #ffe895;*/
+            font-weight: bold;
+        }
+
+        .headphone {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 26px;
+        }
+
+        .numbers {
+            position: absolute;
+            left: 15px;
+            top: 3px;
+            width: 100px;
+            height: 30px;
+            font-size: 13px;
+            line-height: 30px;
+            font-weight: lighter;
+            text-align: right;
+            color: gray;
+        }
+
+        .tags {
+            position: absolute;
+            left: 10px;
+            top: 53px;
+            width: 450px;
+            height: 30px;
+            font-size: 12px;
+            line-height: 30px;
+            /*background: red;*/
+            /* font-weight: bold; */
+        }
+
+        .desc {
+            position: absolute;
+            left: 10px;
+            top: 94px;
+            width: 559px;
+            height: 88px;
+            font-size: 12px;
+            line-height: 19px;
+            overflow: auto;
+            text-align: justify;
+
+            /* background: red; */
+            /* font-weight: bold; */
+        }
+    </style>
+</head>
+<body>
+<div id = "music-list">
+    <ul class = "listul">
+        <li class = "list">
+            <div class = "leftimg">
+                <img class = "backgroundUrl" src = "http://p1.music.126.net/VrIZjN6ai4oNFNmUBsZJ6w==/109951162929005317.jpg" alt = "">
+            </div>
+            <div class = "right">
+                <span class = "name">This is a music demo.</span>
+                <div class = "listener">
+                    <span class = "numbers">21542</span>
+                    <img src = "src/assets/images/headphone.png" class = "headphone" alt = "">
+                </div>
+                <span class = "tags">标签：流行、摇滚、FUNK</span>
+                <div class = "desc">光阴似箭，今年，首批00后登上高考战场。我们不禁感慨时间稍瞬即逝。珍惜现在，缅怀我们即将逝去/已经逝去的青春！我们的青春永不褪色！</div>
+            </div>
+        </li>
+        <li class = "list">
+            <div class = "leftimg">
+                <img class = "backgroundUrl" src = "http://p1.music.126.net/VrIZjN6ai4oNFNmUBsZJ6w==/109951162929005317.jpg" alt = "">
+            </div>
+            <div class = "right">
+                <span class = "name">This is a music demo.</span>
+                <div class = "listener">
+                    <span class = "numbers">21542</span>
+                    <img src = "src/assets/images/headphone.png" class = "headphone" alt = "">
+                </div>
+                <span class = "tags">标签：流行、摇滚、FUNK</span>
+                <div class = "desc">光阴似箭，今年，首批00后登上高考战场。我们不禁感慨时间稍瞬即逝。珍惜现在，缅怀我们即将逝去/已经逝去的青春！我们的青春永不褪色！</div>
+            </div>
+        </li>
+        <li class = "list">
+            <div class = "leftimg">
+                <img class = "backgroundUrl" src = "http://p1.music.126.net/VrIZjN6ai4oNFNmUBsZJ6w==/109951162929005317.jpg" alt = "">
+            </div>
+            <div class = "right">
+                <span class = "name">This is a music demo.</span>
+                <div class = "listener">
+                    <span class = "numbers">21542</span>
+                    <img src = "src/assets/images/headphone.png" class = "headphone" alt = "">
+                </div>
+                <span class = "tags">标签：流行、摇滚、FUNK</span>
+                <div class = "desc">光阴似箭，今年，首批00后登上高考战场。我们不禁感慨时间稍瞬即逝。珍惜现在，缅怀我们即将逝去/已经逝去的青春！我们的青春永不褪色！</div>
+            </div>
+        </li>
+        <li class = "list">
+            <div class = "leftimg">
+                <img class = "backgroundUrl" src = "http://p1.music.126.net/VrIZjN6ai4oNFNmUBsZJ6w==/109951162929005317.jpg" alt = "">
+            </div>
+            <div class = "right">
+                <span class = "name">This is a music demo.</span>
+                <div class = "listener">
+                    <span class = "numbers">21542</span>
+                    <img src = "src/assets/images/headphone.png" class = "headphone" alt = "">
+                </div>
+                <span class = "tags">标签：流行、摇滚、FUNK</span>
+                <div class = "desc">光阴似箭，今年，首批00后登上高考战场。我们不禁感慨时间稍瞬即逝。珍惜现在，缅怀我们即将逝去/已经逝去的青春！我们的青春永不褪色！</div>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
