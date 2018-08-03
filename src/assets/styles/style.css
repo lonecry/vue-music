@@ -25,16 +25,15 @@ body {
     font-size: 12px;
     /*border-bottom: 1px solid #ff5bcc*/
 }
-
-.list {
-    width: 2179px;
-    height: 16px;
-    color: white;
-    font-size: 12px;
-    /* border-bottom: 1px solid #ff5bcc; */
-    position: relative;
-    left: -553px;
-}
+/*.list {*/
+/*width: 2179px;*/
+/*height: 16px;*/
+/*color: white;*/
+/*font-size: 12px;*/
+/*!* border-bottom: 1px solid #ff5bcc; *!*/
+/*position: relative;*/
+/*left: -553px;*/
+/*}*/
 
 .leftimg {
     width: 200px;
@@ -59,12 +58,13 @@ body {
 }
 
 .right {
-    width: 600px;
-    height: 200px;
-    float: left;
-    background: #f6f9fb;
-    /*background: rgba(194, 194, 194, 1);*/
-    position: relative;
+    width      : 600px;
+    height     : 200px;
+    float      : left;
+    background : #f6f9fb;
+    /*background : rgba(194, 194, 194, 1);*/
+    position   : relative;
+    color      : black;
 }
 
 .name {
@@ -115,15 +115,15 @@ body {
 }
 
 .tags {
-    position: absolute;
-    left: 10px;
-    top: 60px;
-    width: 450px;
-    height: 30px;
-    font-size: 12px;
-    line-height: 30px;
-    /*background: red;*/
-    /* font-weight: bold; */
+    position    : absolute;
+    left        : 10px;
+    top         : 60px;
+    width       : 450px;
+    height      : 30px;
+    font-size   : 12px;
+    line-height : 30px;
+    /*background  : red;*/
+    font-weight : bold;
 }
 
 .desc {

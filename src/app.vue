@@ -1,7 +1,7 @@
 <template>
     <div id = "musiclist">
         <ul class = "listul">
-            <li class = "list" v-for = "(list,index) in datajson">
+            <li class = "list" v-for = "(list,index) in datajson" :key="list.id">
                 <div class = "leftimg">
                     <img class = "backgroundUrl" :src = "list.coverImgUrl" v-on:click = "changstata(index,list.ordered)" alt = "">
                 </div>
@@ -13,7 +13,9 @@
                     </div>
                     <span class = "tags">标签：{{labs(index,list.tags)}}</span>
                     <transition name = "fade" v-on:enter = "enter" v-if = "true">
-                        <div v-if = "list.ordered" class = "desc">{{list.description.substring(0,150)}}...</div>
+                        <div v-if = "list.ordered" class = "desc">
+                            {{textcut(index,list.description) }}...
+                        </div>
                     </transition>
                 </div>
             </li>
@@ -33,19 +35,29 @@
         methods: {
             labs: function (index, val){
                 return val.join('  、');
-            },
+			},
             changstata(index, ordered){
                 this.datajson[index].ordered
                 this.datajson[index].ordered = !ordered
-            },
+			}, textcut(index, text){
+				try {
+					console.log(index, text.substring(0, 10))
+					var str = text.substring(0, 150)
+					return str
+				}catch (e){
+					console.log(e);
+				}
+			},
             enter(){
                 console.log('done')
-            },
-        }, mounted(){
+			},
+		}, mounted(){
             console.log('mounted online')
             axios.get('http://www.daiwei.org/vue/server/music2.php?inAjax=1&do=albums')
+			// axios.get('http://simpleqq.com/api/json1.php?ds')/**/
                 .then((response) =>{
-                        this.datajson = response.data.playlists
+					console.log(response.data.playlists);
+					this.datajson = response.data.playlists
                     }
                 )
                 .catch((response) =>{

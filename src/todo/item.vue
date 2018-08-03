@@ -1,39 +1,50 @@
 <template>
     <div id = "musiclist">
         <ul class = "listul">
-            <li class = "list" v-for = "(itemlist,index) in  list">
-                {{'(\"'+itemlist.id+'\",'+'\"'+itemlist.url+'\",'+'\"'+itemlist.br+'\",'+'\"'+itemlist.size+'\",'+'\"'+itemlist.md5+'\",'+'\"'+itemlist.code+'\",'+'\"'+itemlist.expi+'\",'+'\"'+itemlist.type+'\",'+'\"'+itemlist.gain+'\",'+'\"'+itemlist.fee +'\",'+'\"'+itemlist.uf +'\",'+'\"'+itemlist.payed +'\",'+'\"'+itemlist.flag +'\",'+'\"'+itemlist.canExtend +'\"),' }}
+            <li class = "list" v-for = "(list,index) in datajson">
+                <div class = "leftimg">
+                    <img class = "backgroundUrl" :src = "list.coverImgUrl" v-on:click = "changstata(index,list.ordered)" alt = "">
+                </div>
+                <div class = "right">
+                    <span class = "name">{{list.name}}</span>
+                    <div class = "listener">
+                        <span class = "numbers">{{list.trackCount}}</span>
+                        <img src = "../assets/images/headphone.png" class = "headphone" alt = "">
+                    </div>
+                    <span class = "tags">标签：{{labs(index,list.tags)}}</span>
+                    <transition name = "fade" v-on:enter = "enter" v-if = "true">
+                        <div v-if = "list.ordered" class = "desc">{{list.description.substring(0,150)}}...</div>
+                    </transition>
+                </div>
             </li>
         </ul>
     </div>
 </template>
 <script>
+	import {json} from '../assets/data/data.js'
     import axios from 'Axios'
 
     export default {
         data(){
-            return {datajson: {}, list: []}
+			// var datajson = json
+			return {datajson: []}
+		}, // data: {datajson: []},
+		methods: {
+			labs: function (index, val){
+				return val.join('  、');
+			}, changstata(index, ordered){
+				this.datajson[index].ordered
+				this.datajson[index].ordered = !ordered
+			}, enter(){
+				console.log('done')
+			},
         },
         mounted(){
             console.log('mounted')
-            axios.get('http://simpleqq.com/api/json1.php')
+			axios.get('http://www.daiwei.org/vue/server/music2.php?inAjax=2&do=albums')
                 .then((response) =>{
-                        // console.log(response.data.privileges);
-                        this.datajson = response.data.privileges
-                        for (var item in this.datajson) {
-                            // console.log(this.datajson[item].id);
-                            axios.get('http://120.79.162.149:3000/music/url?id=' + this.datajson[item].id)
-                                .then((response) =>{
-
-                                        // console.log(response.data.data[0]);
-                                        this.list.push(response.data.data[0])
-                                        console.log(this.list[0]);
-                                    }
-                                )
-                                .catch((response) =>{
-                                    console.log(response);
-                                })
-                        }
+					// this.datajson = response.data.playlists
+					this.datajson = json
                     }
                 )
                 .catch((response) =>{
@@ -43,4 +54,8 @@
     }
 </script>
 <style scoped>
+    h1 {
+        color : greenyellow;
+        width : 100%
+    }
 </style>
