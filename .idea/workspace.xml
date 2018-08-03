@@ -455,12 +455,12 @@
       <workItem from="1531725598177" duration="5744000" />
       <workItem from="1531879172926" duration="183000" />
       <workItem from="1533269412577" duration="1075000" />
-      <workItem from="1533281362563" duration="4163000" />
+      <workItem from="1533281362563" duration="4092000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148880000" />
+    <option name="totallyTimeSpent" value="148809000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -500,10 +500,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="json data structure changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="json data structure changed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
