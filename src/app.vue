@@ -29,7 +29,8 @@
     export default {
         data(){
             // var datajson = json
-            return {datajson: []}
+			// return {datajson: []}
+			return {datajson: json}
         },
         // data: {datajson: []},
         methods: {
@@ -41,7 +42,7 @@
                 this.datajson[index].ordered = !ordered
 			}, textcut(index, text){
 				try {
-					console.log(index, text.substring(0, 10))
+					// console.log(index, text.substring(0, 10))
 					var str = text.substring(0, 150)
 					return str
 				}catch (e){
@@ -51,13 +52,14 @@
             enter(){
                 console.log('done')
 			},
-		}, mounted(){
+		},//mouted
+		mounted(){
             console.log('mounted online')
             axios.get('http://www.daiwei.org/vue/server/music2.php?inAjax=1&do=albums')
 			// axios.get('http://simpleqq.com/api/json1.php?ds')/**/
                 .then((response) =>{
 					console.log(response.data.playlists);
-					this.datajson = response.data.playlists
+					// this.datajson = response.data.playlists
                     }
                 )
                 .catch((response) =>{

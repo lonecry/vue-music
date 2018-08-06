@@ -1,19 +1,21 @@
 <template>
     <div id = "musiclist">
         <ul class = "listul">
-            <li class = "list" v-for = "(list,index) in datajson">
+            <li class = "list" v-for = "(list,index) in datajson" :key = "list.id">
                 <div class = "leftimg">
                     <img class = "backgroundUrl" :src = "list.coverImgUrl" v-on:click = "changstata(index,list.ordered)" alt = "">
                 </div>
                 <div class = "right">
-                    <span class = "name">{{list.name}}</span>
+                    <span class = "name"> {{list.name}}</span>
                     <div class = "listener">
                         <span class = "numbers">{{list.trackCount}}</span>
                         <img src = "../assets/images/headphone.png" class = "headphone" alt = "">
                     </div>
                     <span class = "tags">标签：{{labs(index,list.tags)}}</span>
-                    <transition name = "fade" v-on:enter = "enter" v-if = "true">
-                        <div v-if = "list.ordered" class = "desc">{{list.description.substring(0,150)}}...</div>
+                    <transition name = "fade" v-if = "true">
+                        <div v-if = "list.ordered" class = "desc">
+                            {{textcut(index,list.description) }}...
+                        </div>
                     </transition>
                 </div>
             </li>
@@ -33,10 +35,17 @@
 			labs: function (index, val){
 				return val.join('  、');
 			}, changstata(index, ordered){
-				this.datajson[index].ordered
 				this.datajson[index].ordered = !ordered
 			}, enter(){
 				console.log('done')
+			}, textcut(index, text){
+				try {
+					// console.log(index, text.substring(0, 10))
+					var str = text.toString().substring(0, 150)
+					return str
+				} catch (e) {
+					console.log(e);
+				}
 			},
         },
         mounted(){
